@@ -7,8 +7,18 @@ export function About() {
   return (
     <section id="sobre-mi" className="py-24 bg-primary/5 scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Título en Móvil (visible antes de la foto en pantallas pequeñas) */}
+        <div className="block md:hidden mb-8">
+          <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
+            Sobre Mí
+          </p>
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground text-balance leading-tight">
+            Medicina Preventiva con Base Científica
+          </h2>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Image - Left Column (shown on top in mobile, side-by-side in md and up) */}
+          {/* Image - Left Column */}
           <div className="relative aspect-[3/4] max-w-md mx-auto w-full">
             <div className="absolute -inset-3 bg-primary/15 rounded-3xl rotate-2 transition-transform" />
             <div className="relative h-full w-full overflow-hidden rounded-3xl shadow-md">
@@ -25,7 +35,8 @@ export function About() {
 
           {/* Content - Right Column */}
           <div className="space-y-6">
-            <div>
+            {/* Título en Desktop */}
+            <div className="hidden md:block">
               <p className="text-sm uppercase tracking-widest text-primary font-medium mb-3">
                 Sobre Mí
               </p>

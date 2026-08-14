@@ -155,7 +155,7 @@ export function SchedulingForm() {
     const message = encodeURIComponent(
       `Hola Dra. Erika, he enviado una solicitud de valoración preventiva sobre "${topicLabel}" en su sitio web. Mi nombre es ${patientName} y prefiero la jornada de la ${selectedJornada === "mañana" ? "mañana (Sábados)" : "tarde (Lunes a Jueves o Sábados)"}. Quedo atento para coordinar la cita.`
     )
-    window.open(`https://wa.me/573136343077?text=${message}`, "_blank")
+    window.open(`https://wa.me/573022875637?text=${message}`, "_blank")
   }
 
   return (

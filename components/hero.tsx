@@ -10,7 +10,7 @@ export function Hero() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mt-14">
           {/* Content */}
-          <div className="order-2 lg:order-1">
+          <div className="order-1">
             <p className="text-sm uppercase tracking-widest text-primary font-medium mb-4">
               Medicina Interna Personalizada
             </p>
@@ -50,7 +50,7 @@ export function Hero() {
           </div>
           
           {/* Image */}
-          <div className="order-1 lg:order-2 relative">
+          <div className="order-2 relative">
             <div className="relative aspect-[4/5] max-w-md mx-auto lg:max-w-none">
               <div className="absolute inset-0 bg-primary/15 rounded-3xl -rotate-3 transition-transform" />
               <div className="relative rounded-3xl overflow-hidden shadow-md">

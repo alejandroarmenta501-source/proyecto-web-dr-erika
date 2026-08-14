@@ -82,6 +82,16 @@ export function Services() {
   const [activeService, setActiveService] = useState(services[0].id)
   const active = services.find((s) => s.id === activeService) || services[0]
 
+  const handleServiceSelect = (id: string) => {
+    setActiveService(id)
+    if (typeof window !== "undefined") {
+      const detailElement = document.getElementById("detalle-servicio")
+      if (detailElement) {
+        detailElement.scrollIntoView({ behavior: "smooth", block: "nearest" })
+      }
+    }
+  }
+
   return (
     <section id="servicios" className="py-24 scroll-mt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -103,7 +113,7 @@ export function Services() {
             {services.map((service) => (
               <button
                 key={service.id}
-                onClick={() => setActiveService(service.id)}
+                onClick={() => handleServiceSelect(service.id)}
                 className={cn(
                   "group flex items-start gap-4 p-6 rounded-2xl border text-left transition-all duration-300",
                   activeService === service.id
@@ -155,7 +165,7 @@ export function Services() {
           </div>
 
           {/* Service Detail */}
-          <div className="bg-card p-8 lg:p-10 rounded-2xl border border-border">
+          <div id="detalle-servicio" className="bg-card p-8 lg:p-10 rounded-2xl border border-border scroll-mt-20">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
                 <active.icon className="h-7 w-7 text-primary" />
