@@ -88,41 +88,13 @@ export function SchedulingForm() {
     return true
   }
 
-  const handleNext = async () => {
+  const handleNext = () => {
     if (!canProceed()) return
 
     if (currentStep === 2) {
-      setIsSubmitting(true)
-      setSubmitError(null)
-
-      try {
-        const response = await fetch("/api/solicitudes", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            patientName,
-            patientPhone,
-            patientEmail,
-            selectedTopic,
-            selectedJornada,
-          }),
-        })
-
-        const data = await response.json()
-
-        if (!response.ok) {
-          throw new Error(data.error || "Ocurrió un error al procesar tu solicitud.")
-        }
-
-        // Si fue exitoso, avanzamos a la confirmación
-        setCurrentStep(3)
-      } catch (err: any) {
-        setSubmitError(err.message || "Error de red al conectar con el servidor.")
-      } finally {
-        setIsSubmitting(false)
-      }
+      // Redirección directa a WhatsApp sin guardar en servidor
+      handleWhatsAppRedirection()
+      setCurrentStep(3)
     } else if (currentStep < 3) {
       setCurrentStep(currentStep + 1)
     }
