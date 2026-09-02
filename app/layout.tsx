@@ -10,7 +10,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Dra. Erika | Médico Internista - Atención Médica Personalizada',
+  title: 'Dra. Erika | Médica Internista - Atención Médica Personalizada',
   description: 'Medicina interna con enfoque humano. Prevención de demencia, control metabólico y valoración deportiva. 10 años de experiencia cuidando tu salud.',
   generator: 'v0.app',
   icons: {

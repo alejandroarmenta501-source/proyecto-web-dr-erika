@@ -14,7 +14,7 @@ export function Footer() {
             </span>
             <span className="text-muted-foreground">|</span>
             <span className="text-sm text-muted-foreground">
-              Médico Internista
+              Médica Internista
             </span>
           </div>
 

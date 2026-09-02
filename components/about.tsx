@@ -24,7 +24,7 @@ export function About() {
             <div className="relative h-full w-full overflow-hidden rounded-3xl shadow-md">
               <Image
                 src="/images/Fotos_ErikaWeb2.jpg"
-                alt="Dra. Erika - Médico Internista"
+                alt="Dra. Erika - Médica Internista"
                 fill
                 className="object-cover"
                 sizes="(max-w-md) 100vw, 50vw"
