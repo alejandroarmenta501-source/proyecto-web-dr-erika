@@ -55,8 +55,8 @@ export function Hero() {
               <div className="absolute inset-0 bg-primary/15 rounded-3xl -rotate-3 transition-transform" />
               <div className="relative rounded-3xl overflow-hidden shadow-md">
                 <Image
-                  src="/images/Fotos_ErikaWeb1.jpg"
-                  alt="Dra. Erika - Médica Internista"
+                  src="/images/Fotos_DraErika_Correccion-1.jpg"
+                  alt="Dra. Erika Zabaleta - Médica Internista"
                   width={600}
                   height={750}
                   className="object-cover w-full h-full"

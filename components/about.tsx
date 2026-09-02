@@ -23,8 +23,8 @@ export function About() {
             <div className="absolute -inset-3 bg-primary/15 rounded-3xl rotate-2 transition-transform" />
             <div className="relative h-full w-full overflow-hidden rounded-3xl shadow-md">
               <Image
-                src="/images/Fotos_ErikaWeb2.jpg"
-                alt="Dra. Erika - Médica Internista"
+                src="/images/Fotos_ErikaWeb-10.jpg"
+                alt="Dra. Erika Zabaleta, médica internista"
                 fill
                 className="object-cover"
                 sizes="(max-w-md) 100vw, 50vw"
