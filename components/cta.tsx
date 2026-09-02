@@ -61,7 +61,7 @@ export function CTA() {
                 </div>
               </a>
               <a
-                href="mailto:contacto@draerika.com"
+                href="mailto:erikabuenpronostico@gmail.com"
                 className="flex items-center gap-4 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center shrink-0">
@@ -69,7 +69,7 @@ export function CTA() {
                 </div>
                 <div>
                   <p className="text-sm text-primary-foreground/60">Email</p>
-                  <p className="font-medium">contacto@draerika.com</p>
+                  <p className="font-medium">erikabuenpronostico@gmail.com</p>
                 </div>
               </a>
               <div className="flex items-center gap-4 text-primary-foreground/80">

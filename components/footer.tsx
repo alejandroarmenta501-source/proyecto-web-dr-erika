@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { Mail } from "lucide-react"
 
 export function Footer() {
   return (
@@ -16,6 +17,14 @@ export function Footer() {
               Médico Internista
             </span>
           </div>
+
+          <a
+            href="mailto:erikabuenpronostico@gmail.com"
+            className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Mail className="h-4 w-4 text-primary" />
+            <span>erikabuenpronostico@gmail.com</span>
+          </a>
 
           <nav className="flex flex-wrap justify-center gap-6">
             <Link
