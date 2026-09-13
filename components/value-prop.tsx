@@ -1,6 +1,6 @@
 "use client"
 
-import { Clock, Heart, TrendingUp, Circle } from "lucide-react"
+import { Clock, Heart, TrendingUp, Circle, Apple, Wind, Syringe, Home } from "lucide-react"
 
 const values = [
   {
@@ -27,6 +27,30 @@ const values = [
     description:
       "Vivir mejor por más tiempo. \nCuida tu músculo, tus huesos, tu cerebro y tu corazón para vivir con más salud, independencia y bienestar.",
   },
+  {
+    icon: Apple,
+    title: "Salud Digestiva",
+    description:
+      "Cuida tu digestión, protege tu salud. \nComprende tu microbiota, identifica factores de riesgo y adopta hábitos para tu bienestar gastrointestinal.",
+  },
+  {
+    icon: Wind,
+    title: "Salud Pulmonar",
+    description:
+      "Respirar bien también es vivir bien. \nConoce cómo proteger tu capacidad respiratoria y prevenir afecciones pulmonares a lo largo de tu vida.",
+  },
+  {
+    icon: Syringe,
+    title: "Vacunación",
+    description:
+      "Vacunarte hoy es proteger tu futuro. \nConoce y mantén al día los esquemas de inmunización indicados para cada etapa y condición de vida.",
+  },
+  {
+    icon: Home,
+    title: "Tu Internista en Casa",
+    description:
+      "La prevención también se construye en tu día a día. \nAcompañamiento clínico adaptado a tu hogar para transformar metas en hábitos reales.",
+  },
 ]
 
 export function ValueProp() {
@@ -45,19 +69,19 @@ export function ValueProp() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {values.map((value) => (
             <div
               key={value.title}
-              className="group bg-card p-8 rounded-2xl border border-border hover:border-primary/40 hover:bg-primary/5 hover:shadow-lg transition-all duration-300"
+              className="group bg-card p-6 sm:p-8 rounded-2xl border border-border hover:border-primary/40 hover:bg-primary/5 hover:shadow-lg transition-all duration-300 flex flex-col h-full"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors shrink-0">
                 <value.icon className="h-6 w-6 text-primary" />
               </div>
               <h3 className="font-serif text-xl font-bold text-foreground mb-3 whitespace-pre-line">
                 {value.title}
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-sm sm:text-base flex-1">
                 {value.description}
               </p>
             </div>
