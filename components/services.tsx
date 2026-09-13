@@ -10,9 +10,9 @@ const services = [
     id: "estilo-vida",
     icon: Stethoscope,
     title: "Medicina del Estilo de Vida",
-    subtitle: "Tu hábito es tu medicina",
+    subtitle: "Tus hábitos son tu medicina. Descubre cómo el sueño, la nutrición, el movimiento y la epigenética pueden ayudarte a vivir mejor y por más tiempo.",
     description:
-      "Un enfoque clínico y práctico enfocado en epigenética, sueño, nutrición y movimiento para optimizar tu bienestar. A través de este programa, obtendrás herramientas personalizadas para construir desde hoy la vitalidad y la longevidad que tu futuro de salud demanda.",
+      "Un enfoque clínico y práctico enfocado en epigenética, sueño, actividad física, nutrición y movimiento para optimizar tu bienestar. A través de este programa, obtendrás herramientas personalizadas para construir desde hoy la vitalidad y la longevidad que tu futuro de salud demanda.",
     features: [
       "Diagnóstico integral de hábitos y entorno diario",
       "Plan personalizado de sueño y alimentación inteligente",

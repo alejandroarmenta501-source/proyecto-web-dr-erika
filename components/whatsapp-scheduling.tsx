@@ -9,7 +9,7 @@ export function WhatsAppScheduling() {
   const [topic, setTopic] = useState("")
   
   // Número de WhatsApp de la Dra. Erika
-  const phoneNumber = "573022875637"
+  const phoneNumber = "573225075525"
   
   const handleSchedule = () => {
     if (!topic) {

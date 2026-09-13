@@ -49,7 +49,7 @@ export function CTA() {
           <div className="relative px-8 py-12 lg:px-16">
             <div className="grid md:grid-cols-3 gap-8">
               <a
-                href="tel:+573022875637"
+                href="tel:+573225075525"
                 className="flex items-center gap-4 text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
                 <div className="w-12 h-12 rounded-xl bg-primary-foreground/10 flex items-center justify-center shrink-0">
@@ -57,7 +57,7 @@ export function CTA() {
                 </div>
                 <div>
                   <p className="text-sm text-primary-foreground/60">Teléfono</p>
-                  <p className="font-medium">+57 302 287 5637</p>
+                  <p className="font-medium">+57 322 507 5525</p>
                 </div>
               </a>
               <a

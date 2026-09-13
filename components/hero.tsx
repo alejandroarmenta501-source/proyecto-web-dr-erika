@@ -20,7 +20,7 @@ export function Hero() {
               para el futuro.
             </h1>
             <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-lg">
-              Medicina Interna enfocada en la prevención y educación continua. Aprende a proteger tu cerebro, tu corazón y tu futuro.
+              Medicina Interna enfocada en la prevención y educación continua. Aprende a proteger cada órgano de tu cuerpo, cuida tu salud y transforma tu futuro.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <a 

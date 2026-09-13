@@ -7,25 +7,25 @@ const values = [
     icon: Clock,
     title: "Cerebro Sano",
     description:
-      "Protege tu agilidad mental. \nAprende a prevenir el deterioro cognitivo y manejar el impacto del estrés en tu mente con bases científicas.",
+      "Protege tu agilidad mental. \nAprende a prevenir el deterioro cognitivo y a manejar el impacto del estrés en tu mente con bases científicas.",
   },
   {
     icon: Heart,
     title: "Prevención\nCardiometabólica",
     description:
-      "Más allá de los números. \nEntiende qué significan tus cifras de tensión y azúcar para evitar infartos antes de que ocurran.",
+      "Más allá de los números: comprende lo que tus cifras de presión arterial, glucosa y colesterol significan para tu salud y actúa hoy para prevenir un infarto mañana.",
   },
   {
     icon: TrendingUp,
     title: "Medicina del \nEstilo de Vida",
     description:
-      "Tu hábito es tu medicina. \nUn taller práctico sobre epigenética, sueño y nutrición para hackear tu bienestar.",
+      "Tus hábitos son tu medicina. \nDescubre cómo el sueño, la nutrición, el movimiento y la epigenética pueden ayudarte a vivir mejor y por más tiempo.",
   },
   {
     icon: Circle,
     title: "Envejecimiento\nSaludable",
     description:
-      "Vivir mejor, por más tiempo. \nConstruye hoy la fuerza muscular y la densidad ósea que necesitarás mañana.",
+      "Vivir mejor por más tiempo. \nCuida tu músculo, tus huesos, tu cerebro y tu corazón para vivir con más salud, independencia y bienestar.",
   },
 ]
 

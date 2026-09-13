@@ -23,6 +23,8 @@ import {
   Sunset,
   Loader2,
   MessageCircle,
+  Video,
+  Building2,
   Sparkles
 } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -65,11 +67,12 @@ export function SchedulingForm() {
     }
   }, [])
   
-  // Datos del paciente y jornada seleccionada
+  // Datos del paciente, jornada y modalidad seleccionada
   const [patientName, setPatientName] = useState("")
   const [patientEmail, setPatientEmail] = useState("")
   const [patientPhone, setPatientPhone] = useState("")
   const [selectedJornada, setSelectedJornada] = useState<"mañana" | "tarde" | null>(null)
+  const [selectedModality, setSelectedModality] = useState<"presencial" | "virtual" | null>(null)
 
   // Estados de envío y errores
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -82,7 +85,8 @@ export function SchedulingForm() {
         patientName.trim() !== "" &&
         patientPhone.trim() !== "" &&
         patientEmail.trim() !== "" &&
-        selectedJornada !== null
+        selectedJornada !== null &&
+        selectedModality !== null
       )
     }
     return true
@@ -113,6 +117,7 @@ export function SchedulingForm() {
     setPatientEmail("")
     setPatientPhone("")
     setSelectedJornada(null)
+    setSelectedModality(null)
     setSubmitError(null)
   }
 
@@ -124,10 +129,11 @@ export function SchedulingForm() {
 
   const handleWhatsAppRedirection = () => {
     const topicLabel = topics.find((t) => t.id === selectedTopic)?.label || ""
+    const modalityLabel = selectedModality === "presencial" ? "Presencial" : "Virtual"
     const message = encodeURIComponent(
-      `Hola Dra. Erika, he enviado una solicitud de valoración preventiva sobre "${topicLabel}" en su sitio web. Mi nombre es ${patientName} y prefiero la jornada de la ${selectedJornada === "mañana" ? "mañana (Sábados)" : "tarde (Lunes a Jueves o Sábados)"}. Quedo atento para coordinar la cita.`
+      `Hola Dra. Erika, he enviado una solicitud de valoración preventiva sobre "${topicLabel}" en su sitio web. Mi nombre es ${patientName}, Modalidad: ${modalityLabel}, y prefiero la jornada de la ${selectedJornada === "mañana" ? "mañana (Sábados)" : "tarde (Lunes a Jueves o Sábados)"}. Quedo atento para coordinar la cita.`
     )
-    window.open(`https://wa.me/573022875637?text=${message}`, "_blank")
+    window.open(`https://wa.me/573225075525?text=${message}`, "_blank")
   }
 
   return (
@@ -318,85 +324,159 @@ export function SchedulingForm() {
                 </div>
               </div>
 
-              {/* Selector de Jornada */}
-              <div className="space-y-5 bg-secondary/15 rounded-2xl border border-border p-6">
-                <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">
-                  Preferencia de Jornada
-                </h4>
-                <p className="text-xs text-muted-foreground">
-                  Selecciona en qué jornada prefieres ser atendido. La cita definitiva se concertará vía WhatsApp o llamada telefónica.
-                </p>
-                <p className="text-xs text-muted-foreground/80 italic mt-1.5">
-                  * Espacio sujeto a disponibilidad previa validación.
-                </p>
-                <div className="grid gap-3">
-                  <button
-                    type="button"
-                    disabled={isSubmitting}
-                    onClick={() => setSelectedJornada("mañana")}
-                    className={cn(
-                      "group p-4 rounded-xl border-2 text-left transition-all duration-300 flex items-center gap-4 cursor-pointer disabled:opacity-50 disabled:pointer-events-none",
-                      selectedJornada === "mañana"
-                        ? "border-primary bg-primary/5"
-                        : "border-border bg-background hover:border-primary/50 hover:bg-secondary/50"
-                    )}
-                  >
-                    <div
+              {/* Preferencias de Modalidad y Jornada */}
+              <div className="space-y-6">
+                {/* Selector de Modalidad */}
+                <div className="space-y-4 bg-secondary/15 rounded-2xl border border-border p-6">
+                  <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-1">
+                    Modalidad de Atención
+                  </h4>
+                  <p className="text-xs text-muted-foreground mb-3">
+                    Elige cómo deseas realizar tu valoración médica preventiva.
+                  </p>
+                  <div className="grid grid-cols-2 gap-3">
+                    <button
+                      type="button"
+                      disabled={isSubmitting}
+                      onClick={() => setSelectedModality("presencial")}
                       className={cn(
-                        "w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors",
-                        selectedJornada === "mañana"
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-secondary text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
+                        "group p-4 rounded-xl border-2 text-left transition-all duration-300 flex flex-col sm:flex-row items-center gap-3 cursor-pointer disabled:opacity-50 disabled:pointer-events-none",
+                        selectedModality === "presencial"
+                          ? "border-primary bg-primary/5"
+                          : "border-border bg-background hover:border-primary/50 hover:bg-secondary/50"
                       )}
                     >
-                      <Sun className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className={cn(
-                        "font-medium text-sm transition-colors",
-                        selectedJornada === "mañana" ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground"
+                      <div className={cn(
+                        "w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-colors",
+                        selectedModality === "presencial"
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-secondary text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
                       )}>
-                        Jornada de la Mañana
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        Sugerido para Sábados de 07:00 AM a 12:00 PM
-                      </p>
-                    </div>
-                  </button>
+                        <Building2 className="h-4 w-4" />
+                      </div>
+                      <span className={cn(
+                        "font-medium text-sm transition-colors text-center sm:text-left",
+                        selectedModality === "presencial" ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground"
+                      )}>
+                        Presencial
+                      </span>
+                    </button>
 
-                  <button
-                    type="button"
-                    disabled={isSubmitting}
-                    onClick={() => setSelectedJornada("tarde")}
-                    className={cn(
-                      "group p-4 rounded-xl border-2 text-left transition-all duration-300 flex items-center gap-4 cursor-pointer disabled:opacity-50 disabled:pointer-events-none",
-                      selectedJornada === "tarde"
-                        ? "border-primary bg-primary/5"
-                        : "border-border bg-background hover:border-primary/50 hover:bg-secondary/50"
-                    )}
-                  >
-                    <div
+                    <button
+                      type="button"
+                      disabled={isSubmitting}
+                      onClick={() => setSelectedModality("virtual")}
                       className={cn(
-                        "w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors",
-                        selectedJornada === "tarde"
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-secondary text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
+                        "group p-4 rounded-xl border-2 text-left transition-all duration-300 flex flex-col sm:flex-row items-center gap-3 cursor-pointer disabled:opacity-50 disabled:pointer-events-none",
+                        selectedModality === "virtual"
+                          ? "border-primary bg-primary/5"
+                          : "border-border bg-background hover:border-primary/50 hover:bg-secondary/50"
                       )}
                     >
-                      <Sunset className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <p className={cn(
-                        "font-medium text-sm transition-colors",
-                        selectedJornada === "tarde" ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground"
+                      <div className={cn(
+                        "w-9 h-9 rounded-lg flex items-center justify-center shrink-0 transition-colors",
+                        selectedModality === "virtual"
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-secondary text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
                       )}>
-                        Jornada de la Tarde
-                      </p>
-                      <p className="text-xs text-muted-foreground">
-                        Sugerido para Lunes a Jueves (05:00 PM a 07:00 PM) o Sábados (01:00 PM a 06:00 PM)
-                      </p>
-                    </div>
-                  </button>
+                        <Video className="h-4 w-4" />
+                      </div>
+                      <span className={cn(
+                        "font-medium text-sm transition-colors text-center sm:text-left",
+                        selectedModality === "virtual" ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground"
+                      )}>
+                        Virtual
+                      </span>
+                    </button>
+                  </div>
+
+                  {selectedModality === "presencial" && (
+                    <p className="text-xs text-muted-foreground/90 italic bg-primary/5 border border-primary/20 p-3 rounded-lg animate-in fade-in duration-200">
+                      Atención física en consultorio privado (espacio sujeto a disponibilidad previa confirmación)
+                    </p>
+                  )}
+                </div>
+
+                {/* Selector de Jornada */}
+                <div className="space-y-5 bg-secondary/15 rounded-2xl border border-border p-6">
+                  <h4 className="text-sm font-semibold text-primary uppercase tracking-wider mb-2">
+                    Preferencia de Jornada
+                  </h4>
+                  <p className="text-xs text-muted-foreground">
+                    Selecciona en qué jornada prefieres ser atendido. La cita definitiva se concertará vía WhatsApp o llamada telefónica.
+                  </p>
+                  <p className="text-xs text-muted-foreground/80 italic mt-1.5">
+                    * Espacio sujeto a disponibilidad previa validación.
+                  </p>
+                  <div className="grid gap-3">
+                    <button
+                      type="button"
+                      disabled={isSubmitting}
+                      onClick={() => setSelectedJornada("mañana")}
+                      className={cn(
+                        "group p-4 rounded-xl border-2 text-left transition-all duration-300 flex items-center gap-4 cursor-pointer disabled:opacity-50 disabled:pointer-events-none",
+                        selectedJornada === "mañana"
+                          ? "border-primary bg-primary/5"
+                          : "border-border bg-background hover:border-primary/50 hover:bg-secondary/50"
+                      )}
+                    >
+                      <div
+                        className={cn(
+                          "w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors",
+                          selectedJornada === "mañana"
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-secondary text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
+                        )}
+                      >
+                        <Sun className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <p className={cn(
+                          "font-medium text-sm transition-colors",
+                          selectedJornada === "mañana" ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground"
+                        )}>
+                          Jornada de la Mañana
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          Sugerido para Sábados de 07:00 AM a 12:00 PM
+                        </p>
+                      </div>
+                    </button>
+
+                    <button
+                      type="button"
+                      disabled={isSubmitting}
+                      onClick={() => setSelectedJornada("tarde")}
+                      className={cn(
+                        "group p-4 rounded-xl border-2 text-left transition-all duration-300 flex items-center gap-4 cursor-pointer disabled:opacity-50 disabled:pointer-events-none",
+                        selectedJornada === "tarde"
+                          ? "border-primary bg-primary/5"
+                          : "border-border bg-background hover:border-primary/50 hover:bg-secondary/50"
+                      )}
+                    >
+                      <div
+                        className={cn(
+                          "w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors",
+                          selectedJornada === "tarde"
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-secondary text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
+                        )}
+                      >
+                        <Sunset className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <p className={cn(
+                          "font-medium text-sm transition-colors",
+                          selectedJornada === "tarde" ? "text-foreground font-semibold" : "text-muted-foreground group-hover:text-foreground"
+                        )}>
+                          Jornada de la Tarde
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          Sugerido para Lunes a Jueves (05:00 PM a 07:00 PM) o Sábados (01:00 PM a 06:00 PM)
+                        </p>
+                      </div>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -438,6 +518,12 @@ export function SchedulingForm() {
                   <span className="text-muted-foreground">Tema de Consulta:</span>
                   <span className="font-medium text-foreground">
                     {topics.find((t) => t.id === selectedTopic)?.label}
+                  </span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-muted-foreground">Modalidad:</span>
+                  <span className="font-medium text-foreground">
+                    {selectedModality === "presencial" ? "Presencial (Consultorio privado)" : "Virtual"}
                   </span>
                 </div>
                 <div className="flex justify-between">
