@@ -14,14 +14,17 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           <a 
             href="#hero" 
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="flex flex-col justify-center text-left hover:opacity-90 transition-opacity group py-1"
             onClick={(e) => {
               e.preventDefault()
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
           >
-            <span className="font-serif text-xl font-medium text-foreground">
-              Dra. Erika
+            <span className="font-serif text-sm sm:text-base lg:text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors leading-tight">
+              Dra. Erika Yovana Ariza Sanchez
+            </span>
+            <span className="text-[10px] sm:text-xs uppercase tracking-wider text-muted-foreground font-medium mt-0.5">
+              Especialista Medicina Interna
             </span>
           </a>
 
