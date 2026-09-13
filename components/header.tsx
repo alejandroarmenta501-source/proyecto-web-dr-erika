@@ -24,7 +24,7 @@ export function Header() {
               Dra. Erika Yovana Ariza Sanchez
             </span>
             <span className="text-[10px] sm:text-xs uppercase tracking-wider text-muted-foreground font-medium mt-0.5">
-              Especialista Medicina Interna
+              Especialista en Medicina Interna
             </span>
           </a>
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Brain, Activity, ArrowRight, Stethoscope, Heart, Sparkles } from "lucide-react"
+import { Brain, Activity, ArrowRight, Stethoscope, Heart, Sparkles, Apple, Wind, Syringe, Home } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
@@ -76,6 +76,66 @@ const services = [
       "Tácticas personalizadas para la resiliencia y el balance integral diario",
     ],
   },
+  {
+    id: "salud-digestiva",
+    icon: Apple,
+    title: "Salud Digestiva",
+    subtitle: "Cuida tu digestión, protege tu salud",
+    description:
+      "Un programa para comprender tu sistema digestivo, identificar factores de riesgo y construir hábitos que favorezcan una buena salud gastrointestinal a lo largo de la vida.",
+    features: [
+      "Evaluación clínica integral y factores de riesgo digestivo",
+      "Orientación y prevención en reflujo, gastritis, colon e hígado graso",
+      "Salud intestinal, microbiota, fibra y nutrición personalizada",
+      "Prevención y tamizaje oportuno de cáncer colorrectal",
+      "Señales de alarma y uso responsable de medicamentos",
+    ],
+  },
+  {
+    id: "salud-pulmonar",
+    icon: Wind,
+    title: "Salud Pulmonar",
+    subtitle: "Respirar bien también es vivir bien",
+    description:
+      "Un programa para conocer, proteger y cuidar tus pulmones, identificar factores de riesgo y preservar tu capacidad respiratoria a lo largo de la vida.",
+    features: [
+      "Evaluación de síntomas respiratorios y antecedentes de exposición",
+      "Prevención y detección temprana de EPOC, asma y afecciones respiratorias",
+      "Concientización y manejo sobre impacto de tabaco, vapeo y calidad del aire",
+      "Orientación en vacunación respiratoria preventiva",
+      "Ejercicio, preservación de capacidad pulmonar y envejecimiento activo",
+    ],
+  },
+  {
+    id: "vacunacion",
+    icon: Syringe,
+    title: "Vacunación",
+    subtitle: "Vacunarte hoy es proteger tu futuro",
+    description:
+      "Un programa para conocer las vacunas que necesitas según tu edad, antecedentes, condiciones de salud, ocupación y viajes, manteniendo al día tu protección a lo largo de la vida.",
+    features: [
+      "Evaluación de historial de inmunización y esquemas pendientes",
+      "Vacunación integral en el adulto y adulto mayor",
+      "Esquemas específicos para personas con condiciones crónicas",
+      "Asesoría especializada en vacunación previa a viajes internacionales",
+      "Educación médica para decisiones informadas basadas en evidencia",
+    ],
+  },
+  {
+    id: "internista-en-casa",
+    icon: Home,
+    title: "Tu Internista en Casa",
+    subtitle: "La prevención también se construye en tu día a día",
+    description:
+      "Programa de acompañamiento personalizado para transformar las recomendaciones médicas en hábitos sostenibles adaptados a tu hogar, tu entorno y tu vida cotidiana.",
+    features: [
+      "Evaluación integral de hábitos, entorno diario y estilo de vida",
+      "Plan de salud preventivo adaptado a tus prioridades reales",
+      "Acompañamiento en tu entorno (modalidad presencial o virtual)",
+      "Estrategias sostenibles de nutrición, movimiento y descanso",
+      "Seguimiento continuo para convertir hábitos en un mejor pronóstico",
+    ],
+  },
 ]
 
 export function Services() {
@@ -107,7 +167,7 @@ export function Services() {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8">
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-8 items-start">
           {/* Service Tabs */}
           <div className="flex flex-col gap-4">
             {services.map((service) => (
@@ -165,7 +225,7 @@ export function Services() {
           </div>
 
           {/* Service Detail */}
-          <div id="detalle-servicio" className="bg-card p-8 lg:p-10 rounded-2xl border border-border scroll-mt-20">
+          <div id="detalle-servicio" className="bg-card p-8 lg:p-10 rounded-2xl border border-border scroll-mt-20 lg:sticky lg:top-24">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
                 <active.icon className="h-7 w-7 text-primary" />

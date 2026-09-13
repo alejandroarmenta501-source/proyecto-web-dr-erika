@@ -25,6 +25,9 @@ import {
   MessageCircle,
   Video,
   Building2,
+  Wind,
+  Syringe,
+  Home,
   Sparkles
 } from "lucide-react"
 import { cn } from "@/lib/utils"
@@ -41,6 +44,10 @@ const topics: Topic[] = [
   { id: "demencia", label: "Prevención de Demencia", icon: <Brain className="h-5 w-5" /> },
   { id: "renal", label: "Salud Renal", icon: <Activity className="h-5 w-5" /> },
   { id: "salud-mental", label: "Prevención Salud Mental", icon: <Sparkles className="h-5 w-5" /> },
+  { id: "salud-digestiva", label: "Salud Digestiva", icon: <Apple className="h-5 w-5" /> },
+  { id: "salud-pulmonar", label: "Salud Pulmonar", icon: <Wind className="h-5 w-5" /> },
+  { id: "vacunacion", label: "Vacunación", icon: <Syringe className="h-5 w-5" /> },
+  { id: "internista-en-casa", label: "Tu Internista en Casa", icon: <Home className="h-5 w-5" /> },
 ]
 
 const steps = [
@@ -213,7 +220,7 @@ export function SchedulingForm() {
                 Elige el área de salud en la que quieres anticiparte. Cada espacio está diseñado para enseñarte a proteger tu cuerpo antes de que aparezcan los síntomas.
               </p>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {topics.map((topic) => (
                 <button
                   key={topic.id}
