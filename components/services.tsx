@@ -125,7 +125,7 @@ const services = [
     id: "internista-en-casa",
     icon: Home,
     title: "Tu Internista en Casa",
-    subtitle: "La prevención también se construye en tu día a día",
+    subtitle: "Tu salud merece tiempo, atención y un plan personalizado.",
     description:
       "Programa de acompañamiento personalizado para transformar las recomendaciones médicas en hábitos sostenibles adaptados a tu hogar, tu entorno y tu vida cotidiana.",
     features: [
