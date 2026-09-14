@@ -419,7 +419,7 @@ export function SchedulingForm() {
                     Preferencia de Jornada
                   </h4>
                   <p className="text-xs text-muted-foreground">
-                    Nuestro equipo se pondrá en contacto contigo vía WhatsApp o vía telefónica.
+                    Selecciona la jornada que prefieras. Nuestro equipo se pondrá en contacto contigo vía WhatsApp o vía telefónica.
                   </p>
                   <p className="text-xs text-muted-foreground/80 italic mt-1.5">
                     * Espacio según disponibilidad.
