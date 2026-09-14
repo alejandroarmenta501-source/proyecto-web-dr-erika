@@ -137,10 +137,11 @@ export function SchedulingForm() {
   const handleWhatsAppRedirection = () => {
     const topicLabel = topics.find((t) => t.id === selectedTopic)?.label || ""
     const modalityLabel = selectedModality === "presencial" ? "Presencial" : "Virtual"
+    const targetPhone = selectedModality === "presencial" ? "573016980193" : "573225075525"
     const message = encodeURIComponent(
       `Hola Dra. Erika, he enviado una solicitud de valoración preventiva sobre "${topicLabel}" en su sitio web. Mi nombre es ${patientName}, Modalidad: ${modalityLabel}, y prefiero la jornada de la ${selectedJornada === "mañana" ? "mañana (Sábados)" : "tarde (Lunes a Jueves o Sábados)"}. Quedo atento para coordinar la cita.`
     )
-    window.open(`https://wa.me/573225075525?text=${message}`, "_blank")
+    window.open(`https://wa.me/${targetPhone}?text=${message}`, "_blank")
   }
 
   return (
@@ -339,7 +340,7 @@ export function SchedulingForm() {
                     Modalidad de Atención
                   </h4>
                   <p className="text-xs text-muted-foreground mb-3">
-                    Elige cómo deseas realizar tu valoración médica preventiva.
+                    Elige cómo deseas realizar tu valoración médica especializada con enfoque preventivo.
                   </p>
                   <div className="grid grid-cols-2 gap-3">
                     <button
@@ -398,9 +399,17 @@ export function SchedulingForm() {
                   </div>
 
                   {selectedModality === "presencial" && (
-                    <p className="text-xs text-muted-foreground/90 italic bg-primary/5 border border-primary/20 p-3 rounded-lg animate-in fade-in duration-200">
-                      Atención física en consultorio privado (espacio sujeto a disponibilidad previa confirmación)
-                    </p>
+                    <div className="space-y-1 text-xs bg-primary/5 border border-primary/20 p-3.5 rounded-lg animate-in fade-in duration-200">
+                      <p className="font-medium text-foreground">
+                        IPS Natalis, Carrera 21 #21-153 - Consultorio 209 - Unidad Médica Plaza Jardín.
+                      </p>
+                      <p className="text-muted-foreground">
+                        Para agendar en modalidad presencial, comunícate al:{" "}
+                        <a href="tel:3016980193" className="font-semibold text-primary underline hover:opacity-80">
+                          3016980193
+                        </a>.
+                      </p>
+                    </div>
                   )}
                 </div>
 
@@ -410,10 +419,10 @@ export function SchedulingForm() {
                     Preferencia de Jornada
                   </h4>
                   <p className="text-xs text-muted-foreground">
-                    Selecciona en qué jornada prefieres ser atendido. La cita definitiva se concertará vía WhatsApp o llamada telefónica.
+                    Nuestro equipo se pondrá en contacto contigo vía WhatsApp o vía telefónica.
                   </p>
                   <p className="text-xs text-muted-foreground/80 italic mt-1.5">
-                    * Espacio sujeto a disponibilidad previa validación.
+                    * Espacio según disponibilidad.
                   </p>
                   <div className="grid gap-3">
                     <button
