@@ -139,7 +139,7 @@ export function SchedulingForm() {
     const modalityLabel = selectedModality === "presencial" ? "Presencial" : "Virtual"
     const targetPhone = "573225075525"
     const message = encodeURIComponent(
-      `Hola Dra. Erika, he enviado una solicitud de valoración preventiva sobre "${topicLabel}" en su sitio web. Mi nombre es ${patientName}, Modalidad: ${modalityLabel}, y prefiero la jornada de la ${selectedJornada === "mañana" ? "mañana (Sábados)" : "tarde (Lunes a Jueves o Sábados)"}. Quedo atento para coordinar la cita.`
+      `Hola Dra. Erika, he enviado una solicitud de valoración preventiva sobre "${topicLabel}" en su sitio web. Mi nombre es ${patientName}, Modalidad: ${modalityLabel}, y prefiero la jornada de la ${selectedJornada === "mañana" ? "mañana (Sábados, domingos y festivos)" : "tarde (Lunes a domingos)"}. Quedo atento para coordinar la cita.`
     )
     window.open(`https://wa.me/${targetPhone}?text=${message}`, "_blank")
   }
@@ -468,7 +468,7 @@ export function SchedulingForm() {
                           Jornada de la Mañana
                         </p>
                         <p className="text-xs text-muted-foreground">
-                          Sugerido para Sábados de 07:00 AM a 12:00 PM
+                          Sábados, domingos y festivos (sujeto a disponibilidad)
                         </p>
                       </div>
                     </button>
@@ -502,7 +502,7 @@ export function SchedulingForm() {
                           Jornada de la Tarde
                         </p>
                         <p className="text-xs text-muted-foreground">
-                          Sugerido para Lunes a Jueves (05:00 PM a 07:00 PM) o Sábados (01:00 PM a 06:00 PM)
+                          Lunes a domingos (sujeto a disponibilidad)
                         </p>
                       </div>
                     </button>
@@ -559,7 +559,7 @@ export function SchedulingForm() {
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Preferencia:</span>
                   <span className="font-medium text-foreground capitalize">
-                    Jornada {selectedJornada === "mañana" ? "Mañana (Sábados)" : "Tarde (Lunes a Jueves o Sábados)"}
+                    Jornada {selectedJornada === "mañana" ? "Mañana (Sábados, domingos y festivos)" : "Tarde (Lunes a domingos)"}
                   </span>
                 </div>
                 <div className="flex justify-between border-t border-border/30 pt-3">
