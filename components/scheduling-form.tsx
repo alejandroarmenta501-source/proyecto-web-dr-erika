@@ -411,6 +411,20 @@ export function SchedulingForm() {
                       </p>
                     </div>
                   )}
+
+                  {selectedModality === "virtual" && (
+                    <div className="space-y-1 text-xs bg-primary/5 border border-primary/20 p-3.5 rounded-lg animate-in fade-in duration-200">
+                      <p className="font-medium text-foreground">
+                        Consulta en línea realizada a través de Google Meet.
+                      </p>
+                      <p className="text-muted-foreground">
+                        Para agendar en modalidad virtual, comunícate al:{" "}
+                        <a href="tel:3225075525" className="font-semibold text-primary underline hover:opacity-80">
+                          3225075525
+                        </a>. Te ayudaremos a coordinar la fecha y hora disponible.
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 {/* Selector de Jornada */}
