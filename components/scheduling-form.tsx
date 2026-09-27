@@ -137,7 +137,7 @@ export function SchedulingForm() {
   const handleWhatsAppRedirection = () => {
     const topicLabel = topics.find((t) => t.id === selectedTopic)?.label || ""
     const modalityLabel = selectedModality === "presencial" ? "Presencial" : "Virtual"
-    const targetPhone = selectedModality === "presencial" ? "573016980193" : "573225075525"
+    const targetPhone = "573225075525"
     const message = encodeURIComponent(
       `Hola Dra. Erika, he enviado una solicitud de valoración preventiva sobre "${topicLabel}" en su sitio web. Mi nombre es ${patientName}, Modalidad: ${modalityLabel}, y prefiero la jornada de la ${selectedJornada === "mañana" ? "mañana (Sábados)" : "tarde (Lunes a Jueves o Sábados)"}. Quedo atento para coordinar la cita.`
     )
@@ -405,8 +405,8 @@ export function SchedulingForm() {
                       </p>
                       <p className="text-muted-foreground">
                         Para agendar en modalidad presencial, comunícate al:{" "}
-                        <a href="tel:3016980193" className="font-semibold text-primary underline hover:opacity-80">
-                          3016980193
+                        <a href="tel:3225075525" className="font-semibold text-primary underline hover:opacity-80">
+                          3225075525
                         </a>.
                       </p>
                     </div>
